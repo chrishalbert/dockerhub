@@ -20,7 +20,7 @@ RUN curl https://xdebug.org/files/xdebug-2.5.5.tgz > xdebug.tgz && \
     echo 'zend_extension=/usr/local/etc/php/conf.d/xdebug.so' >> /usr/local/etc/php/php.ini
 
 # Set timezone
-RUN sed "s/\[Date\]/\[Date\]\ndate\.timezone=\'America\/New_York\'/" /usr/local/etc/php/php.ini > /usr/local/etc/php/php.ini
+RUN sed -i "s/\[Date\]/\[Date\]\ndate\.timezone=\'America\/New_York\'/" /usr/local/etc/php/php.ini
 
 # Install xsl extension
 RUN apt install libxslt-dev -y && \
